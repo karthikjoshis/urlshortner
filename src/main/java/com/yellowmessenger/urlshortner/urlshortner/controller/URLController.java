@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -79,6 +80,12 @@ public class URLController extends AbstractController {
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("http://" + redirectUrlString);
         return redirectView;
+    }
+
+    @GetMapping(value = "/fetch-output",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public String getOutput()
+    {
+        return "Hello world";
     }
 }
 
