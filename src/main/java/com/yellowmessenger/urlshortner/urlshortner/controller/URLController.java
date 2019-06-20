@@ -26,6 +26,7 @@ import java.util.*;
  *                                 2)Re-directs User to the url request which was made in the first api.
  */
 @RestController
+@RequestMapping("/sap")
 public class URLController extends AbstractController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(URLController.class);
