@@ -24,6 +24,8 @@ public class UrlshortnerApplication {
         map.put(2,objects);
         System.out.println("");
 
+        System.out.println("added changes");
+
         System.out.println(map.get(1).get(0));
 
         for (Map.Entry<Integer,List<Object>> m : map.entrySet())
