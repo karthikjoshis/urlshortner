@@ -17,6 +17,7 @@ public class SwaggerConfig {
     @Bean
     public Docket productApi()
     {
+        System.out.println("added a line");
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage(ApplicationConstants.WS_PACKAGE))
