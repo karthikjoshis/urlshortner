@@ -23,4 +23,9 @@ public class SwaggerConfig {
                 //.paths(regex("/rest.*"))
                 .build();
     }*/
+
+    public void test()
+    {
+        System.out.println("added");
+    }
 }
