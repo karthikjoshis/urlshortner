@@ -1,6 +1,6 @@
 package com.yellowmessenger.urlshortner.urlshortner.config;
 
-import com.yellowmessenger.urlshortner.urlshortner.commons.ApplicationConstants;
+import com.yellowmessenger.urlshortner.urlshortner.commons.GeneralConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class SwaggerConfig {
     {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(ApplicationConstants.WS_PACKAGE))
+                .apis(RequestHandlerSelectors.basePackage(GeneralConstants.WS_PACKAGE))
                 //.paths(regex("/rest.*"))
                 .build();
     }

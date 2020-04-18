@@ -1,6 +1,6 @@
 package com.yellowmessenger.urlshortner.urlshortner.services;
 
-import com.yellowmessenger.urlshortner.urlshortner.commons.IDConverter;
+import com.yellowmessenger.urlshortner.urlshortner.commons.ConverterUtil;
 import com.yellowmessenger.urlshortner.urlshortner.repository.URLRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class URLConverterService {
     public String shortenURL(String localURL, String longUrl) {
         LOGGER.info("Shortening {}", longUrl);
         Long id = urlRepository.incrementID();
-        String uniqueID = IDConverter.INSTANCE.createUniqueID(id);
+        String uniqueID = ConverterUtil.INSTANCE.createUniqueID(id);
         urlRepository.saveUrl("url:"+id, longUrl);
         String baseString = formatLocalURLFromShortener(localURL);
         String shortenedURL = baseString + uniqueID;
@@ -29,7 +29,7 @@ public class URLConverterService {
     }
 
     public String getLongURLFromID(String uniqueID) throws Exception {
-        Long dictionaryKey = IDConverter.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
+        Long dictionaryKey = ConverterUtil.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
         String longUrl = urlRepository.getUrl(dictionaryKey);
         LOGGER.info("Converting shortened URL back to {}", longUrl);
         return longUrl;

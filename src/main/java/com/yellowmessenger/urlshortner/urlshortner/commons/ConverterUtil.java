@@ -10,12 +10,12 @@ import java.util.List;
  * Algorithm to generate a unique token/identifier as part of every new request
  * to get the SHORTENED URL.
  */
-public class IDConverter
+public class ConverterUtil
 {
 
-    public static final IDConverter INSTANCE = new IDConverter();
+    public static final ConverterUtil INSTANCE = new ConverterUtil();
 
-    private IDConverter() {
+    private ConverterUtil() {
         initializeCharToIndexTable();
         initializeIndexToCharTable();
     }
