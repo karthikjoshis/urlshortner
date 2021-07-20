@@ -43,6 +43,7 @@ public class URLController extends AbstractController {
     {
         LOGGER.info("Received url to shorten: " + shortenRequest.getUrl());
         LOGGER.info("testing logs");
+        LOGGER.info("testing logs-2");
         List<RateInput> inputs = new ArrayList<RateInput>();
         inputs.add(new RateInput(request.getRemoteAddr(),System.currentTimeMillis()));
 
