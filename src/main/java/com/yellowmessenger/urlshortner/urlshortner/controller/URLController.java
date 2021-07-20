@@ -42,6 +42,7 @@ public class URLController extends AbstractController {
     public ResponseEntity<?> shortenUrl(@RequestBody @Valid final ShortenRequest shortenRequest, HttpServletRequest request) throws Exception
     {
         LOGGER.info("Received url to shorten: " + shortenRequest.getUrl());
+        LOGGER.info("testing logs");
         List<RateInput> inputs = new ArrayList<RateInput>();
         inputs.add(new RateInput(request.getRemoteAddr(),System.currentTimeMillis()));
 
